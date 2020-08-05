@@ -1,0 +1,47 @@
+:root {
+  --gray-dark-color: #3a3f44;
+  --gray-color: gray;
+}
+
+.QuestionBlock {
+  display: flex;
+  justify-content: flex-start;
+
+  padding: 1rem;
+  margin-bottom: 2rem;
+
+  background-color: var(--gray-dark-color);
+}
+
+.QuestionBlockImage {
+  width: 200px;
+  height: 155px;
+  margin-right: 1rem;
+  border-radius: 10px;
+}
+
+.Tools {
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+
+  width: 70%;
+  margin-left: 1rem;
+}
+
+.ToolsTitle {
+  padding: 0.7rem;
+
+  border-bottom: 2px solid var(--gray-color);
+}
+
+@media (max-width: 700px) {
+  .QuestionBlock {
+    flex-direction: column;
+  }
+
+  .Tools {
+    width: 100%;
+    margin-left: 0;
+  }
+}
