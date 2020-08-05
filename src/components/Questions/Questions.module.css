@@ -5,7 +5,7 @@
 
 .QuestionBlock {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
 
   padding: 1rem;
   margin-bottom: 2rem;

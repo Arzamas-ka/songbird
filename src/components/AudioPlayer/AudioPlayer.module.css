@@ -1,0 +1,150 @@
+:root {
+  --pink-color: #e83e8c;
+  --white-color: #ffffff;
+}
+
+.AudioPlayerWrapper {
+  width: 100%;
+  margin: center;
+}
+
+.AudioPlayerWrapper audio {
+  max-width: 100%;
+  max-height: 80px;
+}
+
+.PlayerBody {
+  display: table;
+  padding: 8px 16px;
+
+  background-color: transparent;
+  box-shadow: 0px 0px 16px 4px rgba(46, 45, 45, 0.14);
+  border-radius: 10px;
+}
+
+.BodyLeft,
+.BodyRight {
+  display: table-cell;
+}
+
+.BodyLeft {
+  width: 42px;
+  height: 100%;
+
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.BodyLeft img {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50px;
+}
+
+.BodyRight {
+  width: 100%;
+  height: 80px;
+  padding-left: 18px;
+
+  vertical-align: middle;
+}
+
+.AudioTitle {
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.AudioSubtitle {
+  font-size: 12px;
+  color: #8c8c8c;
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.AudioTimeAndControls {
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+.CurrentTime {
+  float: left;
+}
+
+.DurationTime {
+  float: right;
+}
+
+.AudioProgressBarWrapper {
+  position: relative;
+  margin: 12px 0;
+
+  height: 2px;
+  width: calc(100% - 4px);
+}
+
+.ProgressBarDetail {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  background: #ebebeb;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+
+  cursor: pointer;
+}
+
+.ProgressBarCurrent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0%;
+
+  background: var(--pink-color);
+
+  overflow: hidden;
+  z-index: 2;
+}
+
+.ProgressBarDragPoint {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 8px;
+  height: 8px;
+  margin-top: -3px;
+  margin-left: 0;
+
+  border-radius: 50%;
+  background-color: var(--pink-color);
+  z-index: 2;
+}
+
+.ProgressBarDragPoint::before {
+  position: absolute;
+  content: ' ';
+  top: 50%;
+
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: -9px;
+
+  border-radius: 50%;
+  background: radial-gradient(rgba(var(--pink-color)) 40%, rgba(0, 0, 0, 0) 10%);
+
+  cursor: pointer;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+}
