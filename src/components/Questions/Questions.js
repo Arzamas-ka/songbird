@@ -11,7 +11,7 @@ const Questions = () => {
       <div className={`${cls.QuestionBlock} ${cls.QuestionBlockRounded}`}>
         <img className={cls.QuestionBlockImage} src={defaultBird} alt='' />
         <div className={cls.Tools}>
-          <h3>Bird</h3>
+          <h3 className={cls.ToolsTitle}>******</h3>
           <div>
             <AudioPlayer />
           </div>
