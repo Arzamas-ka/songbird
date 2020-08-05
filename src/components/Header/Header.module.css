@@ -1,0 +1,52 @@
+:root {
+  --pink-color: #e83e8c;
+  --white-color: #ffffff;
+}
+
+.TopPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 15px;
+  margin-bottom: 5px;
+
+  font-size: 1.2rem;
+}
+
+.LogoTitle {
+  color: var(--pink-color);
+  cursor: pointer;
+}
+
+.LogoTitleEnd {
+  color: var(--white-color);
+}
+
+.Score {
+  color: var(--white-color);
+}
+
+.Nav {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0;
+  margin-bottom: 25px;
+
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.NavItem {
+  flex: auto;
+  text-align: center;
+
+  padding: 0.5rem;
+
+  background-color: var(--pink-color);
+}
+
+.NavLink {
+  color: var(--white-color);
+}

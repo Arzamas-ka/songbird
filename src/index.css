@@ -6,6 +6,7 @@ body {
   height: 100vh;
   margin: 0;
 
+  font-family: 'Lemonada', cursive;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.2;
@@ -15,6 +16,10 @@ a {
   text-decoration: none;
 
   cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 ul {
