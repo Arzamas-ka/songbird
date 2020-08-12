@@ -8,8 +8,7 @@ import { birdsData, speciesBirds } from '../../helpers/birds';
 
 const App = () => {
   const randomIndex = Math.floor(Math.random() * birdsData.length);
-  const guessedBird = birdsData[0][randomIndex];
-
+  const questionBird = birdsData[0][randomIndex];
   const [navNumber, setNavNumber] = useState(0);
   const [score, setScore] = useState(0);
   const [stepScore, setStepScore] = useState(5);
@@ -20,12 +19,13 @@ const App = () => {
   const [isQuizFinished, setIsQuizFinished] = useState(false);
   const [kindBirds, setKindBirds] = useState(speciesBirds[0]);
 
+
   return (
     <div>
       <Header />
-      <Questions guessedBird={guessedBird} isGuessedBird={isGuessedBird} />
-      <Answer />
-      <QuizResult />
+      <Questions questionBird={questionBird} isGuessedBird={isGuessedBird} />
+      <Answer selectedBird={selectedBird} />
+      {isQuizFinished && <QuizResult />}
     </div>
   );
 };

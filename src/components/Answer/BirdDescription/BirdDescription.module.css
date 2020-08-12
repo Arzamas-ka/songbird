@@ -1,0 +1,23 @@
+:root {
+  --pink-color: #e83e8c;
+  --pink-hover-color: #b32f6c;
+  --white-color: #ffffff;
+}
+
+.CardInfo {
+  width: 60%;
+  height: 265px;
+  padding: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .CardInfo {
+    width: 100%;
+  }
+}
+
+@media (max-width: 470px) {
+  .CardInfo {
+    height: 100%;
+  }
+}

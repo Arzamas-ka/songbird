@@ -8,10 +8,11 @@ import cls from './AudioPlayer.module.css';
 
 
 export default class AudioPlayer extends Component {
-  constructor(props) {
+  constructor(props, ref) {
     super(props);
     this.audioPlayerRef = React.createRef();
     this.progressBarDetailRef = React.createRef();
+    this.ref = ref;
   }
 
   static defaultProps = {
