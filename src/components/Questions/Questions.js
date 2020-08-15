@@ -12,19 +12,20 @@ const Questions = ({ questionBird, isGuessedBird }) => {
   useEffect(() => {
     audioRef.current.src = questionBird.audio;
     setUrl(questionBird.audio);
-
   }, [questionBird.audio, url]);
 
-  const audio = questionBird.audio;
+  const { audio, name, image } = questionBird;
+  const birdName = isGuessedBird ? name : '******';
+  const birdImage = isGuessedBird ? image : defaultBird;
 
   return (
     <div className='container'>
       <div className={`${cls.QuestionBlock} ${cls.QuestionBlockRounded}`}>
-        <img className={cls.QuestionBlockImage} src={defaultBird} alt='' />
+        <img className={cls.QuestionBlockImage} src={birdImage} alt='' />
         <div className={cls.Tools}>
-          <h3 className={cls.ToolsTitle}>******</h3>
+          <h3 className={cls.ToolsTitle}>{birdName}</h3>
           <div>
-            <AudioPlayer ref={audioRef} url={audio}/>
+            <AudioPlayer ref={audioRef} url={audio} />
           </div>
         </div>
       </div>

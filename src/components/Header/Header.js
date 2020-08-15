@@ -14,7 +14,7 @@ const Header = () => {
             <span className={cls.LogoTitleEnd}>bird</span>
           </h1>
         </a>
-        <span className={cls.Score}>Score: 0</span>
+        <span className={cls.Score}>Счет: 0</span>
       </div>
       <ul className={cls.Nav}>
         {speciesBirds.map(({ id, kind }) => {

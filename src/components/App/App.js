@@ -20,11 +20,12 @@ const App = () => {
   const [kindBirds, setKindBirds] = useState(speciesBirds[0]);
 
 
+
   return (
     <div>
       <Header />
       <Questions questionBird={questionBird} isGuessedBird={isGuessedBird} />
-      <Answer selectedBird={selectedBird} />
+      <Answer questions={birds} selectedBird={selectedBird} />
       {isQuizFinished && <QuizResult />}
     </div>
   );

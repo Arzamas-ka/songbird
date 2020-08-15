@@ -6,7 +6,6 @@ import PlayIcon from '../../assets/images/play.svg';
 
 import cls from './AudioPlayer.module.css';
 
-
 export default class AudioPlayer extends Component {
   constructor(props, ref) {
     super(props);

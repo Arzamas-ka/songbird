@@ -10,7 +10,7 @@
   padding: 1rem;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 995px) {
   .CardInfo {
     width: 100%;
   }

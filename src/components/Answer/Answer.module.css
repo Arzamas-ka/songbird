@@ -67,7 +67,7 @@
   background-color: var(--pink-hover-color);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 995px) {
   .Answers {
     flex-direction: column;
   }
@@ -75,7 +75,7 @@
   .ListGroup {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   .CardInfo {
