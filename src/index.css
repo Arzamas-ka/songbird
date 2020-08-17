@@ -38,3 +38,15 @@ li {
 .hidden {
   display: none;
 }
+
+.li-btn--right {
+  background-color: green;
+}
+
+.li-btn--wrong {
+  background-color: red;
+}
+
+.list-group-item:hover {
+  background-color: #32383e;
+}

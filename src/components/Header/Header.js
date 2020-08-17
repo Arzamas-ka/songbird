@@ -4,7 +4,7 @@ import { speciesBirds } from '../../helpers/birds';
 
 import cls from './Header.module.css';
 
-const Header = () => {
+const Header = ({ score }) => {
   return (
     <div className='container'>
       <div className={cls.TopPanel}>
@@ -14,7 +14,7 @@ const Header = () => {
             <span className={cls.LogoTitleEnd}>bird</span>
           </h1>
         </a>
-        <span className={cls.Score}>Счет: 0</span>
+        <span className={cls.Score}>Счет: {score}</span>
       </div>
       <ul className={cls.Nav}>
         {speciesBirds.map(({ id, kind }) => {

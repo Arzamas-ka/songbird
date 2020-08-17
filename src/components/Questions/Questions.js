@@ -20,7 +20,7 @@ const Questions = ({ questionBird, isGuessedBird }) => {
 
   return (
     <div className='container'>
-      <div className={`${cls.QuestionBlock} ${cls.QuestionBlockRounded}`}>
+      <div className={`${cls.QuestionBlock}`}>
         <img className={cls.QuestionBlockImage} src={birdImage} alt='' />
         <div className={cls.Tools}>
           <h3 className={cls.ToolsTitle}>{birdName}</h3>
