@@ -18,9 +18,9 @@ const App = () => {
   const [isQuizFinished, setIsQuizFinished] = useState(false);
   const [isGuessedBird, setIsGuessedBird] = useState(false);
   const [score, setScore] = useState(0);
-  const [counter, setCounter] = useState(0);
   const [selectedBird, setSelectedBird] = useState(null);
   const [birds, setBirds] = useState(birdsData[navNumber]);
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     setSecretedBird(questionBird(navNumber));
@@ -28,11 +28,20 @@ const App = () => {
     setBirds(birdsData[navNumber]);
   }, [navNumber]);
 
+  useEffect(() => {
+    birdsData.forEach((collection) => {
+      collection.forEach((bird) => {
+        bird.className = 'li-btn';
+      });
+    });
+  }, [isQuizFinished]);
+
   const initializeQuiz = () => {
     setScore(0);
     setNavNumber(0);
     setIsGuessedBird(false);
     setIsQuizFinished(false);
+    setSelectedBird(null);
     setSecretedBird(questionBird(navNumber));
   };
 
@@ -47,6 +56,8 @@ const App = () => {
     }
 
     if (isGuessedBird) {
+      setCounter(0);
+      setSelectedBird(null);
       setNavNumber(navNumber + STEP_SCORE.secondary);
     }
   };
@@ -72,6 +83,7 @@ const App = () => {
       setSelectedBird(selectedBird);
       setIsGuessedBird(true);
       setScore((score) => score + STEP_SCORE.secondary);
+      console.log(birds);
     } else if (isCurrentChooseCorrect) {
       setBirds(updatedBirds);
       setSelectedBird(selectedBird);

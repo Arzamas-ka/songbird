@@ -9,7 +9,7 @@ const Answer = ({
   questions,
   onSelectBird,
   handleClickNext,
-  isGuessedBird
+  isGuessedBird,
 }) => {
   return (
     <>

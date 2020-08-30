@@ -20,7 +20,6 @@ const Questions = ({ secretedBird, isGuessedBird }) => {
     return () => {
       audioRef.current.src = audio;
     };
-
   }, [audio, secretedBird.audio]);
 
   const birdName = isGuessedBird ? name : '******';
