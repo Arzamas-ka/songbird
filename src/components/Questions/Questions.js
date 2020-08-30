@@ -11,7 +11,7 @@ const Questions = ({ secretedBird, isGuessedBird }) => {
   const [url, setUrl] = useState('');
   const { audio, name, image } = secretedBird;
 
-  console.log('загаданная secretedBird', secretedBird.name);
+  console.log(secretedBird.name);
 
   useEffect(() => {
     audioRef.current.src = secretedBird.audio;

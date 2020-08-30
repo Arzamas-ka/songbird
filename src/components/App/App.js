@@ -83,7 +83,7 @@ const App = () => {
       setSelectedBird(selectedBird);
       setIsGuessedBird(true);
       setScore((score) => score + STEP_SCORE.secondary);
-      console.log(birds);
+
     } else if (isCurrentChooseCorrect) {
       setBirds(updatedBirds);
       setSelectedBird(selectedBird);
