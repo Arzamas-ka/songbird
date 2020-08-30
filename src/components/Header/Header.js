@@ -5,7 +5,6 @@ import { speciesBirds } from '../../helpers/birds';
 import cls from './Header.module.css';
 
 const Header = ({ score, navNumber }) => {
-
   return (
     <div className='container'>
       <div className={cls.TopPanel}>
@@ -20,7 +19,14 @@ const Header = ({ score, navNumber }) => {
       <ul className={cls.Nav}>
         {speciesBirds.map(({ id, kind }) => {
           return (
-            <li className={cls.NavItem} key={id}>
+            <li
+              className={
+                id === navNumber
+                  ? `${cls.NavItem} ${cls.NavItemActive}`
+                  : `${cls.NavItem}`
+              }
+              key={id}
+            >
               <span className={cls.NavLink}>{kind}</span>
             </li>
           );

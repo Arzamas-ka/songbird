@@ -4,8 +4,13 @@ import BirdDescription from './BirdDescription/BirdDescription';
 
 import cls from './Answer.module.css';
 
-const Answer = ({ selectedBird, questions, onSelectBird, onClickNext }) => {
-
+const Answer = ({
+  selectedBird,
+  questions,
+  onSelectBird,
+  onClickNext,
+  activeNextPageBtn,
+}) => {
   return (
     <>
       <div className={`${cls.Answers} container`}>
@@ -29,7 +34,14 @@ const Answer = ({ selectedBird, questions, onSelectBird, onClickNext }) => {
         <BirdDescription selectedBird={selectedBird} />
       </div>
       <div className='container'>
-        <button className={cls.NextLevelBtn} onClick={onClickNext}>
+        <button
+          className={
+            !activeNextPageBtn
+              ? `${cls.NextLevelBtn}`
+              : `${cls.NextLevelBtn} ${cls.NextLevelBtnActive}`
+          }
+          onClick={onClickNext}
+        >
           Следующий уровень
         </button>
       </div>
