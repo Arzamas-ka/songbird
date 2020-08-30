@@ -8,6 +8,10 @@ import { birdsData } from '../../helpers/birds';
 import QuizResult from '../QuizResult/QuizResult';
 import { STEP_SCORE } from '../../helpers/consts';
 
+import winSong from '../../assets/audio/win.mp3';
+import errorSong from '../../assets/audio/error.mp3';
+import finishSong from '../../assets/audio/finish.mp3';
+
 const App = () => {
   const randomIndex = Math.floor(Math.random() * birdsData.length);
   const questionBird = useCallback(
@@ -21,6 +25,11 @@ const App = () => {
   const [selectedBird, setSelectedBird] = useState(null);
   const [birds, setBirds] = useState(birdsData[navNumber]);
   const [counter, setCounter] = useState(0);
+  const [audioWin] = useState(new Audio(winSong));
+  const [audioError] = useState(new Audio(errorSong));
+  const [audioFinish] = useState(new Audio(finishSong));
+
+  console.log('загаданная птица: ', secretedBird.name);
 
   useEffect(() => {
     setSecretedBird(questionBird(navNumber));
@@ -75,6 +84,8 @@ const App = () => {
             : 'li-btn li-btn--wrong';
       }
 
+      id === secretedBird.id ? audioWin.play() : audioError.play();
+
       return bird;
     });
 
@@ -83,7 +94,6 @@ const App = () => {
       setSelectedBird(selectedBird);
       setIsGuessedBird(true);
       setScore((score) => score + STEP_SCORE.secondary);
-
     } else if (isCurrentChooseCorrect) {
       setBirds(updatedBirds);
       setSelectedBird(selectedBird);
@@ -113,7 +123,11 @@ const App = () => {
           />
         </>
       ) : (
-        <QuizResult initializeQuiz={initializeQuiz} score={score} />
+        <QuizResult
+          initializeQuiz={initializeQuiz}
+          score={score}
+          audioFinish={audioFinish.play()}
+        />
       )}
     </>
   );
