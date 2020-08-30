@@ -4,7 +4,8 @@ import { speciesBirds } from '../../helpers/birds';
 
 import cls from './Header.module.css';
 
-const Header = ({ score }) => {
+const Header = ({ score, navNumber }) => {
+
   return (
     <div className='container'>
       <div className={cls.TopPanel}>

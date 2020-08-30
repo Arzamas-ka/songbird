@@ -4,10 +4,7 @@ import BirdDescription from './BirdDescription/BirdDescription';
 
 import cls from './Answer.module.css';
 
-const Answer = ({ selectedBird, questions, onSelectBird }) => {
-  const onClickNext = () => {
-    console.log('Next page');
-  };
+const Answer = ({ selectedBird, questions, onSelectBird, onClickNext }) => {
 
   return (
     <>
@@ -32,7 +29,7 @@ const Answer = ({ selectedBird, questions, onSelectBird }) => {
         <BirdDescription selectedBird={selectedBird} />
       </div>
       <div className='container'>
-        <button className={cls.NextLevelBtn} onClick={() => onClickNext()}>
+        <button className={cls.NextLevelBtn} onClick={onClickNext}>
           Следующий уровень
         </button>
       </div>

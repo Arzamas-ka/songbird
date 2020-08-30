@@ -5,6 +5,7 @@
   --gray-color: gray;
   --red-color: red;
   --green-color: green;
+  --gray-dark-color: #3a3f44;
 }
 
 .Answers {
@@ -49,7 +50,8 @@
 .NextLevelBtn {
   width: 100%;
 
-  background-color: var(--pink-color);
+  /* background-color: var(--pink-color); */
+  background-color: var(--gray-dark-color);
   color: var(--white-color);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 
@@ -64,7 +66,8 @@
 
 .NextLevelBtn:hover {
   border-color: rgba(0, 0, 0, 0.6);
-  background-color: var(--pink-hover-color);
+  /* background-color: var(--pink-hover-color); */
+  background-color: var(--gray-color);
 }
 
 @media (max-width: 995px) {
