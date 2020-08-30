@@ -33,6 +33,16 @@ export default class AudioPlayer extends Component {
     playSrc: PlayIcon,
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.url !== this.props.url) {
+      this.setState({
+        currentTime: '00:00',
+        bufferedPercent: 0,
+        currentTimeNum: 0,
+      });
+    }
+  }
+
   audioPlayPause = () => {
     const self = this.audioPlayerRef.current;
     if (self.paused) {
