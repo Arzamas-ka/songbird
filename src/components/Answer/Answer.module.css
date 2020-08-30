@@ -24,6 +24,8 @@
 
 .ListItem {
   color: var(--white-color);
+
+  cursor: pointer;
 }
 
 .ListItem:hover .RadioBtn {

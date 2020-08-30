@@ -8,8 +8,8 @@ const Answer = ({
   selectedBird,
   questions,
   onSelectBird,
-  onClickNext,
-  activeNextPageBtn,
+  handleClickNext,
+  isGuessedBird
 }) => {
   return (
     <>
@@ -36,11 +36,11 @@ const Answer = ({
       <div className='container'>
         <button
           className={
-            !activeNextPageBtn
+            !isGuessedBird
               ? `${cls.NextLevelBtn}`
               : `${cls.NextLevelBtn} ${cls.NextLevelBtnActive}`
           }
-          onClick={onClickNext}
+          onClick={handleClickNext}
         >
           Следующий уровень
         </button>

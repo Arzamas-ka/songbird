@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect, useCallback } from 'react';
 
 import Header from '../Header/Header';
 import Answer from '../Answer/Answer';
@@ -9,30 +10,33 @@ import { STEP_SCORE } from '../../helpers/consts';
 
 const App = () => {
   const randomIndex = Math.floor(Math.random() * birdsData.length);
-  const questionBird = birdsData[0][randomIndex];
-  const [secretedBird, setSecretedBird] = useState(questionBird);
+  const questionBird = useCallback(
+    (navNumber) => birdsData[navNumber][randomIndex],
+  );
+  const [navNumber, setNavNumber] = useState(0);
+  const [secretedBird, setSecretedBird] = useState(questionBird(navNumber));
   const [isQuizFinished, setIsQuizFinished] = useState(false);
   const [isGuessedBird, setIsGuessedBird] = useState(false);
-  const [navNumber, setNavNumber] = useState(0);
   const [score, setScore] = useState(0);
   const [counter, setCounter] = useState(0);
-  const [activeNextPageBtn, setActiveNextPageBtn] = useState(false);
-
-
   const [selectedBird, setSelectedBird] = useState(null);
-  const [birds, setBirds] = useState(birdsData[0]);
+  const [birds, setBirds] = useState(birdsData[navNumber]);
 
-  console.log('isGuessedBird init ', isGuessedBird);
+  useEffect(() => {
+    setSecretedBird(questionBird(navNumber));
+    setIsGuessedBird(false);
+    setBirds(birdsData[navNumber]);
+  }, [navNumber]);
 
   const initializeQuiz = () => {
     setScore(0);
     setNavNumber(0);
     setIsGuessedBird(false);
     setIsQuizFinished(false);
-    setSecretedBird(questionBird);
+    setSecretedBird(questionBird(navNumber));
   };
 
-  const onClickNext = () => {
+  const handleClickNext = () => {
     if (!isGuessedBird) {
       return;
     }
@@ -43,9 +47,7 @@ const App = () => {
     }
 
     if (isGuessedBird) {
-      setNavNumber((navNumber) => navNumber + STEP_SCORE.secondary);
-      setSecretedBird(birdsData[navNumber][randomIndex]);
-      setIsGuessedBird(false);
+      setNavNumber(navNumber + STEP_SCORE.secondary);
     }
   };
 
@@ -65,23 +67,15 @@ const App = () => {
       return bird;
     });
 
-    // if (isGuessedBird) {
-    //   setSelectedBird(selectedBird);
-    //   setBirds(updatedBirds);
-    //   return;
-    // }
-
     if (isCurrentChooseCorrect && counter !== 0) {
       setBirds(updatedBirds);
-      setActiveNextPageBtn(true);
       setSelectedBird(selectedBird);
-      setIsGuessedBird(isCurrentChooseCorrect);
+      setIsGuessedBird(true);
       setScore((score) => score + STEP_SCORE.secondary);
     } else if (isCurrentChooseCorrect) {
       setBirds(updatedBirds);
-      setActiveNextPageBtn(true);
       setSelectedBird(selectedBird);
-      setIsGuessedBird(isCurrentChooseCorrect);
+      setIsGuessedBird(true);
       setScore((score) => score + STEP_SCORE.primary);
     } else {
       setBirds(updatedBirds);
@@ -102,9 +96,8 @@ const App = () => {
             questions={birds}
             selectedBird={selectedBird}
             onSelectBird={handleSelectBird}
-            onClickNext={onClickNext}
+            handleClickNext={handleClickNext}
             isGuessedBird={isGuessedBird}
-            activeNextPageBtn={activeNextPageBtn}
           />
         </>
       ) : (
