@@ -1,0 +1,14 @@
+:root {
+  --white-color: #ffffff;
+}
+
+.DefaultBird {
+  display: flex;
+  flex-direction: column;
+}
+
+.DefaultBird span {
+  padding: 5px;
+
+  color: var(--white-color);
+}

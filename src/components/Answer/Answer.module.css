@@ -1,0 +1,91 @@
+:root {
+  --pink-color: #e83e8c;
+  --pink-light-color: #EE6DA9;
+  --pink-hover-color: #b32f6c;
+  --white-color: #ffffff;
+  --gray-color: gray;
+  --red-color: red;
+  --green-color: green;
+  --gray-dark-color: #3a3f44;
+}
+
+.Answers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 2rem;
+}
+
+.ListGroup {
+  width: 40%;
+  margin-right: 1rem;
+}
+
+.ListItem {
+  color: var(--white-color);
+
+  cursor: pointer;
+}
+
+.ListItem:hover .RadioBtn {
+  background-color: var(--white-color);
+}
+
+.RadioBtn {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 15px;
+
+  background-color: var(--gray-color);
+  border-radius: 50%;
+}
+
+.RadioBtnWrong {
+  background-color: var(--red-color);
+}
+
+.RadioBtnRight {
+  background-color: var(--green-color);
+}
+
+.NextLevelBtn {
+  width: 100%;
+  background-color: var(--gray-dark-color);
+  color: var(--white-color);
+  text-shadow: 1px 1px 1px rgba(138, 113, 113, 0.3);
+
+  border: 1px solid transparent;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.NextLevelBtn:hover {
+  border-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--gray-color);
+}
+
+.NextLevelBtnActive {
+  background-color: var(--pink-light-color);
+}
+
+@media (max-width: 995px) {
+  .Answers {
+    flex-direction: column;
+  }
+
+  .ListGroup {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .CardInfo {
+    width: 100%;
+  }
+}

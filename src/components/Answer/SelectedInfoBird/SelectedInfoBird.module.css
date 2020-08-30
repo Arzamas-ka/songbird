@@ -1,0 +1,50 @@
+.CardBird {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.CardImg {
+  width: 200px;
+  height: 155px;
+
+  margin-right: 1rem;
+
+  border-radius: 10px;
+}
+
+.CardName {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  padding: 0;
+}
+
+.CardNameRus,
+.CardNameLat {
+  display: inline-block;
+  padding: 0 0 0.5rem 0;
+
+  border-bottom: 1px solid grey;
+}
+
+.CardNameLat {
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+@media (max-width: 470px) {
+  .CardBird {
+    flex-direction: column;
+  }
+
+  .CardImg {
+    margin-bottom: 1rem;
+  }
+}
+
+.CardDescription {
+  padding-top: 0.5rem;
+  font-size: 0.8rem;
+}

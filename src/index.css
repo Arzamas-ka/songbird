@@ -6,16 +6,26 @@ body {
   height: 100vh;
   margin: 0;
 
+  font-family: 'Lemonada', cursive;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.2;
-  color: white;
 }
 
 a {
   text-decoration: none;
 
   cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+button, 
+button:active, 
+button:focus {
+    outline: none;
 }
 
 ul {
@@ -33,4 +43,16 @@ li {
 
 .hidden {
   display: none;
+}
+
+.li-btn--right {
+  background-color: green;
+}
+
+.li-btn--wrong {
+  background-color: red;
+}
+
+.list-group-item:hover {
+  background-color: #32383e;
 }

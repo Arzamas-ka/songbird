@@ -1,0 +1,26 @@
+:root {
+  --pink-color: #e83e8c;
+  --white-color: #ffffff;
+}
+
+.Result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 200px;
+}
+
+.ResultTitle {
+  margin-bottom: 5rem;
+
+  font-size: 5rem;
+  color: var(--white-color);
+}
+
+.ResultText {
+  margin-bottom: 5rem;
+
+  font-size: 1.2rem;
+  color: var(--white-color);
+}
